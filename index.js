@@ -99,10 +99,9 @@ const buildDocToc = (docId, lute, callback) => {
 
         // 在开头加上 --- \n > # 目录 \n
         tocs.unshift('--- \n > # 目录');
-
+        tocs.push(`{: ${TOC_ATTR_NAME}="true" }`);
         // 在结尾加上 ---
         tocs.push('---');
-        tocs.push(`{: ${TOC_ATTR_NAME}="true" }`);
         callback(tocs);
     });
 }
