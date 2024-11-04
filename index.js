@@ -63,6 +63,12 @@ const buildDocToc = (docId, lute, callback) => {
             return toc;
         }
         let tocs = iterate(ans);
+        
+        // 在开头加上 --- \n > # 目录 \n
+        tocs.unshift('--- \n > # 目录');
+        // 在结尾加上 ---
+        tocs.push('---');
+        
         tocs.push(`{: ${TOC_ATTR_NAME}="true" }`);
         callback(tocs);
     });
